@@ -19,7 +19,6 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/posts/{post}', 'PostController@show');
     Route::get('/posts/{post}/edit', 'PostController@edit');
     Route::get('/categories/', 'CategoryController@index');
-    // ↓のやつ
     Route::get('/categories/{category}/posts', 'CategoryController@postsIndex');
     Route::get('/categories/create', 'CategoryController@create');
     
@@ -33,9 +32,23 @@ Route::group(['middleware' => ['auth']], function(){
     //delete
     Route::delete('/posts/{post}', 'PostController@delete');
     
+    // コメント
     Route::get('/posts/{post}/get_comments', 'CommentController@getComments')->name('get_comments');
     Route::resource('posts.comments', 'CommentController', [
      'only' => ['store', 'update', 'destroy'],
+    ]);
+    
+    // コメント詳細
+    Route::get('posts/{post}/comments/{comment}/get_comments', 'CommentdetailController@getComments')->name('comment_details.get_comments');
+    Route::resource('posts.comments.commentdetails', 'CommentdetailController', [
+     'only' => ['store', 'update', 'destroy'],
+    ]);
+    
+    // いいね
+    Route::get('/posts/{post}/check', 'LikeController@check')->name('like.check');
+    Route::get('/posts/{post}/counts', 'LikeController@counts')->name('like.counts');
+    Route::resource('posts.likes', 'LikeController', [
+     'only' => ['store'],
     ]);
 });
 

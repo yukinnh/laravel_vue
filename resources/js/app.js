@@ -4,12 +4,12 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import Vue from 'vue'
+const VueStar = window['VueStar'];
+Vue.component('VueStar', VueStar);
+
 require('./bootstrap');
 
 window.Vue = require('vue');
-
-// Vuex Comment 
-// import store from './comment_vuex.js'
 
 /**
  * The following block of code may be used to automatically register your
@@ -23,8 +23,9 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('commentlist-component', require('./components/CommentlistComponent.vue').default);
 Vue.component('comment-component', require('./components/CommentComponent.vue').default);
+Vue.component('commentdetail-component', require('./components/CommentdetailComponent.vue').default);
+Vue.component('like-component', require('./components/LikeComponent.vue').default);
 
 
 /**

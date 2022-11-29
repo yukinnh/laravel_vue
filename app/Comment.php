@@ -21,4 +21,9 @@ class Comment extends Model
    {
        return $this->belongsTo('App\Post');
    }
+   
+   // コメント詳細
+   public function commentdetails() {
+       return $this->hasMany('App\Commentdetail');
+   }
 }

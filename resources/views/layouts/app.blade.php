@@ -13,13 +13,18 @@
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
     <script src="{{ secure_asset('js/deletePost.js') }}" defer></script>
+    <script src="{{ secure_asset('js/like.js') }}" defer></script>
+    <script src="{{ secure_asset('https://cdn.jsdelivr.net/npm/vue-star@0.0.4/dist/VueStar.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css" type="text/css" media="all" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/vueicon.scss') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

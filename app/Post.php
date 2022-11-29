@@ -30,9 +30,27 @@ class Post extends Model
         return $this->belongsTo('App\Category');
     }
     
-    
+    // 1対多
     public function comments()
     {
         return $this->hasmany('App\Comment');
+    }
+    
+    // 1対多
+    public function likes()
+    {
+        return $this->hasmany('App\Like');
+    }
+    
+    // いいね存在チェック
+    public function isLiked($user_id)
+    {
+      return $this->likes()->where('user_id', $user_id)->exists();
+    }
+    
+    // いいね取得
+    public function getLike($user_id)
+    {
+      return $this->likes()->where('user_id', $user_id)->get();
     }
 }

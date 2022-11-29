@@ -21,6 +21,7 @@
     </div>
     <p></p>
     <hr>
+    <like-component :post="{{$post}}"></like-component>
     <comment-component :post="{{$post}}" :login_user_id="{{$login_user_id}}" class="mt-5"></comment-component>
     <div class="footer">
         <a href="/">戻る</a>
